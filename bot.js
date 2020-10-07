@@ -10,7 +10,8 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
-    if (message.member.id != "262852578465808386") {
+
+    if (message.member.id != "262852578465808386" && message.member.id !="172527548985638914") {
         return
     }
     if (message.content === 'mute') {
@@ -18,6 +19,8 @@ client.on('message', async (message) => {
         botMessage.react(reactEmoji)
         messageID = botMessage.id
     }
+  
+
 });
 
 client.on("messageReactionAdd", async (messageReaction, user) => {
@@ -34,7 +37,7 @@ client.on("messageReactionAdd", async (messageReaction, user) => {
         return
 
     }
-    if (user.id != "262852578465808386") {
+    if (user.id != "262852578465808386" && user.id != "172527548985638914") {
         return
     }
     let guild = messageReaction.message.channel.guild
@@ -56,7 +59,7 @@ client.on("messageReactionRemove", async (messageReaction, user) => {
         return
     }
     
-    if (user.id != "262852578465808386") {
+    if (user.id != "262852578465808386" && user.id != "172527548985638914") {
         return
     }
     let guild = messageReaction.message.channel.guild
